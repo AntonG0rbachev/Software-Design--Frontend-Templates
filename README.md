@@ -6,7 +6,7 @@
 ## How is it works?
 Image if u start to develop backend software and u do not want to coding frontend side of your`s application
 - First you need to clone this repo into your project as subdirectory
-  > Your project as a root directory -> let's call it `root`\
+  > Your project as a root directory `->` let's call it `root`\
   > |-/root\
   > |--/some others direcories of your project\
   > |--/this repo

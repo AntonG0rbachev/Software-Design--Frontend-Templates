@@ -1,0 +1,5 @@
+# vscode extensions
+/.vscode/
+
+# file and folder icons
+.DS_Store

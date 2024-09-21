@@ -11,3 +11,9 @@ Image if u start to develop backend software and u do not want to coding fronten
   > |--/some others direcories of your project\
   > |--/this repo
 - At this moment you can use templates
+
+> [!IMPORTANT]
+> if you want it to work correct, you need to run `npm install` for installing `npm` dependencis
+
+> [!TIP]
+> Soon I will create a part of patterns without `npm` dependencies

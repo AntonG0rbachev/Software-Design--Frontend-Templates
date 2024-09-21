@@ -3,7 +3,7 @@
 > [!NOTE]
 > This repository contains necessary and quite simple frontend templates for easy and fast backend software development 
 
-> [!IMOPORTANT]
+> [!IMPORTANT]
 > PLEASE PAY ATTENTION, this project contains two independent branches, each of which can be used as a separate project
 > - [branch](#branch-with-npm) with `npm modules`
 > - and [branch]() without `npm modules`

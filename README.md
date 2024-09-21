@@ -24,3 +24,10 @@ Image if u start to develop backend software and u do not want to coding fronten
 
 > [!TIP]
 > Soon I will create a part of patterns without `npm` dependencies
+
+### How to install?
+
+If you want to install part of project with `npm dependencies` you might do `git clone` but clone needed branch:
+```
+git clone --branch=npm-branch/main https://github.com/AntonG0rbachev/Software-Design--Frontend-Templates.git
+```

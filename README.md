@@ -3,6 +3,12 @@
 > [!NOTE]
 > This repository contains necessary and quite simple frontend templates for easy and fast backend software development 
 
+> [!IMPORTANT]
+> If you want it to work correct, you need to run `npm install` for installing `npm` dependencis
+
+> [!TIP]
+> Soon I will create a part of patterns without `npm` dependencies
+
 ## How is it works?
 Image if u start to develop backend software and u do not want to coding frontend side of your`s application
 - First you need to clone this repo into your project as subdirectory
@@ -11,9 +17,3 @@ Image if u start to develop backend software and u do not want to coding fronten
   > |--/some others direcories of your project\
   > |--/this repo
 - At this moment you can use templates
-
-> [!IMPORTANT]
-> if you want it to work correct, you need to run `npm install` for installing `npm` dependencis
-
-> [!TIP]
-> Soon I will create a part of patterns without `npm` dependencies

@@ -28,6 +28,12 @@ export class LinkedList {
             }
             length++;
         };
+        this.addAll = function (array) {
+            if (!(array instanceof Array)) {
+                throw new Error('cannot add elements from non Array structure')
+            }
+            array.forEach(node => this.add(node))
+        }
         this.remove = function (element) {
             var currentNode = head;
             var previousNode;

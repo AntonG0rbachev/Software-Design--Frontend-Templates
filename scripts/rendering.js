@@ -1,4 +1,4 @@
-function renderHtml(file, containerId) {
+export function renderHtml(file, containerId) {
   fetch(file)
     .then(response => {
       if (!response.ok) {

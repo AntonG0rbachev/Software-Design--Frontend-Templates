@@ -2,7 +2,7 @@ function Node(element) {
   this.element = element;  
   this.next = null;
 }
-function LinkedList() {  
+export function LinkedList() {  
     var length = 0;  
     var head = null;  
     this.size = function () {    

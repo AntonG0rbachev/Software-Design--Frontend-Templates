@@ -1,4 +1,4 @@
-export function renderHtml(file, containerId) {
+function renderHtml(file, containerId) {
   fetch(file)
     .then(response => {
       if (!response.ok) {
@@ -6,7 +6,7 @@ export function renderHtml(file, containerId) {
             `Could not render file: ${response.statusText}`
           )
       }
-      return response.text
+      return response.text()
     })
     .then(data => {
       document
@@ -19,3 +19,5 @@ export function renderHtml(file, containerId) {
       )
     })
 }
+
+renderHtml('/forms/login/login.html', 'login-form')

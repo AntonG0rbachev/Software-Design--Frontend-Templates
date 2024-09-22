@@ -114,5 +114,21 @@ export class LinkedList {
             length--;
             return currentNode.element;
         };
+
+        this.next = function() {
+            nextNode = this.head.next;
+            this.head = nextNode;
+        }
+        this.getNext = function() {
+            return this.head.next;
+        }
+
+        this.previous = function() {
+            previousNode = this.head.previous;
+            this.head = previousNode;
+        }
+        this.getPrevious = function() {
+            return this.head.previous;
+        }
     }
 }

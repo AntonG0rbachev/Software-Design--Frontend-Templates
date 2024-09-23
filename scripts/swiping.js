@@ -7,10 +7,18 @@ list.addAll([
   '/forms/signup/signup.html',
 ])
 
-export function swipeNext() {
+const moveRightButton = document.querySelector('#swipe-right-button');
+const moveLeftButton = document.querySelector('#swipe-left-button');
+const changingBlock = 'form-container';
 
+function swipeNext() {
+  nextForm = list.getNext();
+  list.moveNext();
+  renderHtml(nextForm, changingBlock)
 }
 
-export function swipePrevious() {
-
+function swipePrevious() {
+  previousForm = list.getPrevious();
+  list.movePrevious();
+  renderHtml(previousForm, changingBlock);
 }

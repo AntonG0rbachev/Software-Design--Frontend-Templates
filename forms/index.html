@@ -9,7 +9,17 @@
 <body>
     <div id="content" class="base-container">
         <div class="forms-container">
-            <div id="login-form"></div>
+            <div class="swipe move-next">
+                <button id="swipe-right-button">
+                    <img src="/resources/curvy-arrow-png.png" alt="">
+                </button>
+            </div>
+            <div class="swipe move-previous">
+                <button id="swipe-left-button">
+                    <img src="/resources/curvy-arrow-png.png" alt="">
+                </button>
+            </div>
+            <div class="forms-translating" id="form-container"></div>
         </div>
     </div>
 </body>
@@ -19,6 +29,32 @@
     * {
         margin: 0;
     }
+    .forms-container,
+    .swipe {
+        display: flex;
+        align-items: center;
+    }
+    .forms-container,
+    .forms-transating {
+        width: 100%;
+    }
+    .forms-container {
+        justify-content: space-between;
+    }
+    .swipe button,
+    .swipe button:focus {
+        background: transparent;
+        border: transparent;
+        outline: none;
+    }
+    .swipe img {
+        width: 4rem;
+        height: 4rem;
+    }
+    .move-next {
+        order: 1;
+        transform: rotate(180deg);
+    }
 </style>
 
-<script src="../scripts/rendering.js" defer></script>
+<script type="module" src="../scripts/rendering.js" defer></script>

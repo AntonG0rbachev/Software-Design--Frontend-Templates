@@ -20,4 +20,4 @@ export function renderHtml(file, containerId) {
     })
 }
 
-renderHtml('/forms/login/login.html', 'login-form')
+renderHtml('/forms/login/login.html', 'form-container')

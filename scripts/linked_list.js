@@ -1,8 +1,8 @@
 class Node {
     constructor(element) {
         this.element = element;
-        this.next = null;
-        this.previous = null;
+        this.moveNext = null;
+        this.movePrevious = null;
     }
 }
 export class LinkedList {
@@ -21,10 +21,10 @@ export class LinkedList {
                 head = node;
             } else {
                 var currentNode = head;
-                while (currentNode.next) {
-                    currentNode = currentNode.next;
+                while (currentNode.moveNext) {
+                    currentNode = currentNode.moveNext;
                 }
-                currentNode.next = node;
+                currentNode.moveNext = node;
             }
             length++;
         };
@@ -38,13 +38,13 @@ export class LinkedList {
             var currentNode = head;
             var previousNode;
             if (currentNode.element === element) {
-                head = currentNode.next;
+                head = currentNode.moveNext;
             } else {
                 while (currentNode.element !== element) {
                     previousNode = currentNode;
-                    currentNode = currentNode.next;
+                    currentNode = currentNode.moveNext;
                 }
-                previousNode.next = currentNode.next;
+                previousNode.moveNext = currentNode.moveNext;
             }
             length--;
         };
@@ -59,7 +59,7 @@ export class LinkedList {
                 if (currentNode.element === element) {
                     return index;
                 }
-                currentNode = currentNode.next;
+                currentNode = currentNode.moveNext;
             }
             return -1;
         };
@@ -68,7 +68,7 @@ export class LinkedList {
             var count = 0;
             while (count < index) {
                 count++;
-                currentNode = currentNode.next;
+                currentNode = currentNode.moveNext;
             }
             return currentNode.element;
         };
@@ -81,16 +81,16 @@ export class LinkedList {
                 return false;
             }
             if (index === 0) {
-                node.next = currentNode;
+                node.moveNext = currentNode;
                 head = node;
             } else {
                 while (currentIndex < index) {
                     currentIndex++;
                     previousNode = currentNode;
-                    currentNode = currentNode.next;
+                    currentNode = currentNode.moveNext;
                 }
-                node.next = currentNode;
-                previousNode.next = node;
+                node.moveNext = currentNode;
+                previousNode.moveNext = node;
             }
             length++;
         };
@@ -102,20 +102,20 @@ export class LinkedList {
                 return null;
             }
             if (index === 0) {
-                head = currentIndex.next;
+                head = currentIndex.moveNext;
             } else {
                 while (currentIndex < index) {
                     currentIndex++;
                     previousNode = currentNode;
-                    currentNode = currentNode.next;
+                    currentNode = currentNode.moveNext;
                 }
-                previousNode.next = currentNode.next;
+                previousNode.moveNext = currentNode.moveNext;
             }
             length--;
             return currentNode.element;
         };
 
-        this.next = function() {
+        this.moveNext = function() {
             nextNode = this.head.next;
             this.head = nextNode;
         }
@@ -123,12 +123,20 @@ export class LinkedList {
             return this.head.next;
         }
 
-        this.previous = function() {
+        this.movePrevious = function() {
             previousNode = this.head.previous;
             this.head = previousNode;
         }
         this.getPrevious = function() {
             return this.head.previous;
+        }
+
+        this.setHeadAtStart = function() {
+            if (this.head != null) {
+                while(this.getPrevious != null) {
+                    this.movePrevious
+                }
+            }
         }
     }
 }

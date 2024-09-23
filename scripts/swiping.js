@@ -8,10 +8,6 @@ list.addAll([
 ]);
 list.setHeadAtStart();
 
-const moveRightButton = document.querySelector('#swipe-right-button');
-const moveLeftButton = document.querySelector('#swipe-left-button');
-const changingBlock = 'form-container';
-
 function swipeNext() {
   if (list.getNext() == null) {
     console.error('next item missing')
@@ -31,6 +27,3 @@ function swipePrevious() {
     renderHtml(previousForm, changingBlock);
   }
 }
-
-moveRightButton.addEventListener('click', swipeNext());
-moveLeftButton.addEventListener('click', swipePrevious());

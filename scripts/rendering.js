@@ -20,4 +20,11 @@ export function renderHtml(file, containerId) {
     })
 }
 
-renderHtml('/forms/login/login.html', 'form-container')
+const moveRightButton = document.querySelector('#swipe-right-button');
+const moveLeftButton = document.querySelector('#swipe-left-button');
+const changingBlock = 'form-container';
+
+renderHtml('/forms/login/login.html', changingBlock);
+
+moveRightButton.addEventListener('click', swipeNext());
+moveLeftButton.addEventListener('click', swipePrevious());

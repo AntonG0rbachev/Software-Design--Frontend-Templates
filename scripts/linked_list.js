@@ -120,40 +120,40 @@ export class LinkedList {
         };
 
         this.moveNext = function() {
-            nextNode = this.head.next;
-            this.head = nextNode;
+            var nextNode = head.next != null ? head.next : null;
+            head = nextNode;
         }
         this.getNext = function() {
-            return this.head.next;
+            return head.next;
         }
 
         this.movePrevious = function() {
-            previousNode = this.head.previous;
-            this.head = previousNode;
+            var previousNode = head.previous != null ? head.previous : null;
+            head = previousNode;
         }
         this.getPrevious = function() {
-            return this.head.previous;
+            return head.previous;
         }
 
         this.setHeadAtStart = function() {
-            if (this.head != null) {
-                while(this.getPrevious != null) {
-                    this.movePrevious
+            if (head != null) {
+                while(this.getPrevious() != null) {
+                    this.movePrevious()
                 }
             }
         }
 
         this.toString = function() {
             var result = 'List is:\n';
-            const currentNode = this.head;
+            const currentNode = head;
             this.setHeadAtStart();
-            result += `HEAD: ${this.head.element}\n`;
+            result += `HEAD: ${head.element}\n`;
             var index = 0;
-            while (this.getNext != null) {
+            while (this.getNext() != null) {
                 this.moveNext();
-                result += `node ${index}: ${this.head.element}`;
+                result += `node ${index}: ${head.element}`;
             }
-            this.head = currentNode;
+            head = currentNode;
             return result;
         }
     }

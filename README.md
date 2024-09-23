@@ -16,4 +16,7 @@ Image if u start to develop backend software and u do not want to coding fronten
 - At this moment you can use templates
 
 ## How to install?
-
+If you want to install `pure html+css+js web` project you might do `git clone` but clone needed branch **(pure-web-branch)**:
+```
+git clone --branch=pure-web-branch/main https://github.com/AntonG0rbachev/Software-Design--Frontend-Templates.git
+```

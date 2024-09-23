@@ -138,5 +138,18 @@ export class LinkedList {
                 }
             }
         }
+
+        this.toString = function() {
+            var result = 'List is:\n';
+            const currentNode = this.head;
+            this.setHeadAtStart();
+            result += `HEAD: ${this.head}\n`;
+            var index = 0;
+            while (this.getNext != null) {
+                this.moveNext();
+                result += `node ${index}: ${this.head}`;
+            }
+            return result;
+        }
     }
 }

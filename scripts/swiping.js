@@ -1,4 +1,4 @@
-import { renderHtml } from './rendering'
+import { renderHtml } from './rendering.js'
 import { LinkedList } from './linked_list'
 
 list = new LinkedList()
@@ -8,7 +8,7 @@ list.addAll([
 ])
 
 export function swipeNext() {
-  
+
 }
 
 export function swipePrevious() {

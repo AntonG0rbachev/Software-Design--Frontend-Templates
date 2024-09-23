@@ -7,23 +7,24 @@ list.addAll([
   '/forms/signup/signup.html',
 ]);
 list.setHeadAtStart();
+console.log(list.toString())
 
-function swipeNext() {
+export function swipeNext(changingBlock) {
   if (list.getNext() == null) {
     console.error('next item missing')
   } else {
     nextForm = list.getNext();
     list.moveNext();
-    renderHtml(nextForm, changingBlock)
+    renderHtml(nextForm.element, changingBlock)
   }
 }
 
-function swipePrevious() {
+export function swipePrevious(changingBlock) {
   if (list.getNext() == null) {
     console.error('previous item missing')
   } else {
     previousForm = list.getPrevious();
     list.movePrevious();
-    renderHtml(previousForm, changingBlock);
+    renderHtml(previousForm.element, changingBlock);
   }
 }

@@ -1,8 +1,8 @@
 class Node {
     constructor(element) {
         this.element = element;
-        this.moveNext = null;
-        this.movePrevious = null;
+        this.next = null;
+        this.previous = null;
     }
 }
 export class LinkedList {
@@ -21,10 +21,10 @@ export class LinkedList {
                 head = node;
             } else {
                 var currentNode = head;
-                while (currentNode.moveNext) {
-                    currentNode = currentNode.moveNext;
+                while (currentNode.next) {
+                    currentNode = currentNode.next;
                 }
-                currentNode.moveNext = node;
+                currentNode.next = node;
             }
             length++;
         };
@@ -38,13 +38,13 @@ export class LinkedList {
             var currentNode = head;
             var previousNode;
             if (currentNode.element === element) {
-                head = currentNode.moveNext;
+                head = currentNode.next;
             } else {
                 while (currentNode.element !== element) {
                     previousNode = currentNode;
-                    currentNode = currentNode.moveNext;
+                    currentNode = currentNode.next;
                 }
-                previousNode.moveNext = currentNode.moveNext;
+                previousNode.moveNext = currentNode.next;
             }
             length--;
         };
@@ -59,7 +59,7 @@ export class LinkedList {
                 if (currentNode.element === element) {
                     return index;
                 }
-                currentNode = currentNode.moveNext;
+                currentNode = currentNode.next;
             }
             return -1;
         };
@@ -68,7 +68,7 @@ export class LinkedList {
             var count = 0;
             while (count < index) {
                 count++;
-                currentNode = currentNode.moveNext;
+                currentNode = currentNode.next;
             }
             return currentNode.element;
         };
@@ -81,16 +81,16 @@ export class LinkedList {
                 return false;
             }
             if (index === 0) {
-                node.moveNext = currentNode;
+                node.next = currentNode;
                 head = node;
             } else {
                 while (currentIndex < index) {
                     currentIndex++;
                     previousNode = currentNode;
-                    currentNode = currentNode.moveNext;
+                    currentNode = currentNode.next;
                 }
-                node.moveNext = currentNode;
-                previousNode.moveNext = node;
+                node.next = currentNode;
+                previousNode.next = node;
             }
             length++;
         };
@@ -102,14 +102,14 @@ export class LinkedList {
                 return null;
             }
             if (index === 0) {
-                head = currentIndex.moveNext;
+                head = currentIndex.next;
             } else {
                 while (currentIndex < index) {
                     currentIndex++;
                     previousNode = currentNode;
-                    currentNode = currentNode.moveNext;
+                    currentNode = currentNode.next;
                 }
-                previousNode.moveNext = currentNode.moveNext;
+                previousNode.next = currentNode.next;
             }
             length--;
             return currentNode.element;
@@ -143,12 +143,13 @@ export class LinkedList {
             var result = 'List is:\n';
             const currentNode = this.head;
             this.setHeadAtStart();
-            result += `HEAD: ${this.head}\n`;
+            result += `HEAD: ${this.head.element}\n`;
             var index = 0;
             while (this.getNext != null) {
                 this.moveNext();
-                result += `node ${index}: ${this.head}`;
+                result += `node ${index}: ${this.head.element}`;
             }
+            this.head = currentNode;
             return result;
         }
     }

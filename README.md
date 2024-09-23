@@ -14,3 +14,6 @@ Image if u start to develop backend software and u do not want to coding fronten
   > |--/some others direcories of your project\
   > |--/this repo
 - At this moment you can use templates
+
+## How to install?
+

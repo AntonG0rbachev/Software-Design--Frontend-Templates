@@ -25,6 +25,7 @@ export class LinkedList {
                     currentNode = currentNode.next;
                 }
                 currentNode.next = node;
+                node.previous = currentNode;
             }
             length++;
         };
@@ -32,7 +33,10 @@ export class LinkedList {
             if (!(array instanceof Array)) {
                 throw new Error('cannot add elements from non Array structure')
             }
-            array.forEach(node => this.add(node))
+            array.forEach(node => {
+                console.log(`added node is ${node}`)
+                this.add(node)
+            })
         }
         this.remove = function (element) {
             var currentNode = head;

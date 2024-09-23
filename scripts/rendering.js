@@ -28,5 +28,13 @@ const changingBlock = 'form-container';
 
 renderHtml('/forms/login/login.html', changingBlock);
 
+var list = new LinkedList();
+list.addAll([
+  '/forms/login/login.html',
+  '/forms/signup/signup.html',
+]);
+list.setHeadAtStart();
+console.log(list.toString())
+
 moveRightButton.addEventListener('click', () => swipeNext(changingBlock));
 moveLeftButton.addEventListener('click', () => swipePrevious(changingBlock));

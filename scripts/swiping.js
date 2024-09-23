@@ -1,7 +1,6 @@
 import { renderHtml } from './rendering.js'
-import { LinkedList } from './linked_list.js'
 
-export function swipeNext(changingBlock) {
+export function swipeNext(list, changingBlock) {
   if (list.getNext() == null) {
     console.error('next item missing')
   } else {
@@ -11,7 +10,7 @@ export function swipeNext(changingBlock) {
   }
 }
 
-export function swipePrevious(changingBlock) {
+export function swipePrevious(list, changingBlock) {
   if (list.getNext() == null) {
     console.error('previous item missing')
   } else {

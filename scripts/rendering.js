@@ -1,4 +1,5 @@
 import { swipeNext, swipePrevious } from "./swiping.js";
+import { FormsLinkedList } from "./linked_list.js";
 
 export function renderHtml(file, containerId) {
   fetch(file)
@@ -28,13 +29,14 @@ const changingBlock = 'form-container';
 
 renderHtml('/forms/login/login.html', changingBlock);
 
-var list = new LinkedList();
-list.addAll([
-  '/forms/login/login.html',
-  '/forms/signup/signup.html',
-]);
-list.setHeadAtStart();
-console.log(list.toString())
+var list = new FormsLinkedList();
+console.log(list.getList().toString())
 
-moveRightButton.addEventListener('click', () => swipeNext(changingBlock));
-moveLeftButton.addEventListener('click', () => swipePrevious(changingBlock));
+moveRightButton.addEventListener('click', () => swipeNext(
+  list.getList(), 
+  changingBlock
+));
+moveLeftButton.addEventListener('click', () => swipePrevious(
+  list.getList(), 
+  changingBlock
+));

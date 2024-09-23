@@ -5,6 +5,7 @@ class Node {
         this.previous = null;
     }
 }
+
 export class LinkedList {
     constructor() {
         var length = 0;
@@ -155,5 +156,16 @@ export class LinkedList {
             head = currentNode;
             return result;
         }
+    }
+}
+
+export class FormsLinkedList {
+    constructor() {
+        var list = new LinkedList();
+        list.addAll([
+            '/forms/login/login.html',
+            '/forms/signup/signup.html',
+        ]);
+        list.setHeadAtStart();
     }
 }

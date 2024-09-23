@@ -34,7 +34,6 @@ export class LinkedList {
                 throw new Error('cannot add elements from non Array structure')
             }
             array.forEach(node => {
-                console.log(`added node is ${node}`)
                 this.add(node)
             })
         }

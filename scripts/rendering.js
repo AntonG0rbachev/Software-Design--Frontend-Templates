@@ -1,3 +1,5 @@
+import { swipeNext, swipePrevious } from "./swiping.js";
+
 export function renderHtml(file, containerId) {
   fetch(file)
     .then(response => {
@@ -20,11 +22,11 @@ export function renderHtml(file, containerId) {
     })
 }
 
-const moveRightButton = document.querySelector('#swipe-right-button');
-const moveLeftButton = document.querySelector('#swipe-left-button');
+const moveRightButton = document.querySelector('button#swipe-right-button');
+const moveLeftButton = document.querySelector('button#swipe-left-button');
 const changingBlock = 'form-container';
 
 renderHtml('/forms/login/login.html', changingBlock);
 
-moveRightButton.addEventListener('click', swipeNext());
-moveLeftButton.addEventListener('click', swipePrevious());
+moveRightButton.addEventListener('click', () => swipeNext(changingBlock));
+moveLeftButton.addEventListener('click', () => swipePrevious(changingBlock));

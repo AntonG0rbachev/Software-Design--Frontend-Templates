@@ -38,6 +38,20 @@
 </html>
 
 <style>
+@keyframes linear-shimmering-background {
+	form {
+		background: linear-gradient(to right bottom, #113d94, #205fac, #2f04c9);
+		transition: 2s all;
+	}
+	50% {
+		background: linear-gradient(to right bottom, #2f04c9, #113d94, #205fac);
+		transition: 2s all;
+	}
+	to {
+		background: linear-gradient(to right bottom, #205fac, #2f04c9, #113d94);
+		transition: 2s all;
+	}
+}
 * {
 	margin: 0;
 	color: white;
@@ -53,6 +67,7 @@
 	border-radius: 20px;
 	margin: 0 26rem 0 26rem;
 	min-height: 50vh;
+	animation: 0.5s linear-shimmering-background ease infinite;
 }
 .login-form {
 	width: 100%;

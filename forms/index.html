@@ -10,10 +10,14 @@
     <div id="content" class="base-container">
         <div class="forms-container">
             <div class="swipe move-next">
-                <img src="/resources/curvy-arrow-png.png" alt="">
+                <button>
+                    <img src="/resources/curvy-arrow-png.png" alt="">
+                </button>
             </div>
             <div class="swipe move-previous">
-                <img src="/resources/curvy-arrow-png.png" alt="">
+                <button>
+                    <img src="/resources/curvy-arrow-png.png" alt="">
+                </button>
             </div>
             <div class="forms-transating" id="form-container"></div>
         </div>
@@ -33,6 +37,12 @@
     .forms-container,
     .forms-transating {
         width: 100%;
+    }
+    .swipe button,
+    .swipe button:focus {
+        background: transparent;
+        border: transparent;
+        outline: none;
     }
     .swipe img {
         width: 4rem;

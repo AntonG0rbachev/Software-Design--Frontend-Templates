@@ -167,5 +167,9 @@ export class FormsLinkedList {
             '/forms/signup/signup.html',
         ]);
         list.setHeadAtStart();
+
+        this.getList = function() {
+            return list;
+        }
     }
 }
